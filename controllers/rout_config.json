@@ -1,0 +1,40 @@
+{
+  "alternative_controller": [
+    {
+      "/^dynamic\\/*/": {
+        "dir": "source_file_controllers\\",
+        "name": "MainSourceFileController"
+      }
+    },
+    {
+      "/^css\\/*/": {
+        "dir": "source_file_controllers\\",
+        "name": "MainSourceFileController"
+      }
+    },
+    {
+      "/^js\\/*/": {
+        "dir": "source_file_controllers\\",
+        "name": "MainSourceFileController"
+      }
+    },
+    {
+      "/^img\\/*/": {
+        "dir": "source_file_controllers\\",
+        "name": "MainSourceFileController"
+      }
+    },
+    {
+      "/^$/": {
+        "dir": "main_page_controllers\\",
+        "name": "MainPageController"
+      }
+    },
+    {
+      "/^favicon.ico$/": {
+        "dir": "source_file_controllers\\",
+        "name": "MainSourceFileController"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{% extends 'general_components/base_template.twig' %}
+
+{% block title %}Access point login {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="center-block" style="width: 300px;">
+            {% if has_access == 1 %}
+                <h1 style="color: #1b9448">Has access</h1>
+            {% else %}
+                <h1 style="color: #b42912">Has not access</h1>
+            {% endif %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>First name</td>
+                    <td>{{ user.first_name }}</td>
+                </tr>
+                <tr>
+                    <td>Surname</td>
+                    <td>{{ user.surname }}</td>
+                </tr>
+                <tr>
+                    <td>Father name</td>
+                    <td>{{ user.father_name }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

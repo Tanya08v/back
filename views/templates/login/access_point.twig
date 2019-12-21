@@ -1,0 +1,30 @@
+{% extends 'general_components/login_template.twig' %}
+
+{% block title %}Access point login {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="center-block" style="width: 200px;">
+            <div class="login-form">
+                <form action="/login/login" method="post">
+                    <h2 class="text-center">Log in</h2>
+                    <div class="form-group">
+                        <input type="text" name="login" class="form-control" placeholder="Login" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <select class="form-control" name="access_point" data-width="100%" required>
+                        {% for key, val in points %}
+                            <option value="{{ key }}">{{ val.title }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

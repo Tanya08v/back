@@ -1,0 +1,22 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.tutorialrepublic.com/lib/styles/snippets-1.7.css" >
+</head>
+<body>
+<h1>error</h1>
+{% if error_data_access %}
+    <p>Path : {{path}}</p>
+    <p>Params : </p>
+    {% for key, param in request %}
+        <p> <span> {{key}} : </span> <b>{{param}}</b> </p>
+    {% endfor %}
+    <p>Session : </p>
+    {% for key, param in session %}
+        <p> <span> {{key}} : </span> <b>{{param}}</b> </p>
+    {% endfor %}
+{% endif %}
+</body>
+</html>

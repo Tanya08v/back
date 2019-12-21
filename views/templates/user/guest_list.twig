@@ -1,0 +1,58 @@
+{% extends 'general_components/base_template.twig' %}
+
+{% block title %}Guest list{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="center-block" style="width: 150px;">
+            <a type="button" class="btn btn-success" href="/user/guest">Add guest</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="center-block" style="width: 90%;">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Father name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Created at</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, item in guests %}
+                    {% set since = since + 1 %}
+                    <tr>
+                        <th scope="row">{{ since }}</th>
+                        <td>{{ item.first_name }}</td>
+                        <td>{{ item.father_name }}</td>
+                        <td>{{ item.surname }}</td>
+                        <td>{{ item.created_at }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="center-block bd-example" style="width: 100px;">
+            <nav>
+                <ul class="pagination">
+                    {% if page > 1 %}
+                        <li>
+                            <a href="/user/guest_list?p={{ page - 1 }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if items|length > 0 %}
+                        <li>
+                            <a href="/user/guest_list?p={{ page + 1 }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
